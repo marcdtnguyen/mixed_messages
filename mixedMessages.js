@@ -1,8 +1,17 @@
 function mixedMessages(){
-    const messages = ['The road seems bright ahead. Proceed with gusto!', 'The road is murky. Proceed with caution.', 'The road is dark ahead. It\'s best to turn back.']
-    const randomNumber = getRandom(messages.length);
-    return messages[randomNumber];
+    const messages = {
+        way: ['path', 'road', 'trail', 'way'],
+        description: ['bright', 'murky', 'dark'],
+        proceeding: ['gusto', 'caution', 'care']
+    }
+    const way = messages.way[getRandom(messages.way.length)]
+    const description = messages.description[getRandom(messages.description.length)]
+    const proceeding = messages.proceeding[getRandom(messages.proceeding.length)]
+    return `The ${way} is ${description} ahead. Proceed with ${proceeding}!`
+
 }
+
+
 
 function getRandom(length){
     return Math.floor(Math.random()*length);
